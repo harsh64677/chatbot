@@ -1,16 +1,17 @@
-html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Zippy Chatbot (AI)</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Chatbot</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="chat-box" id="chat-box"></div>
-  <input type="text" id="user-input" placeholder="Type a message..." />
-  <button onclick="sendMessage()">Send</button>
-
+  <div class="chatbox">
+    <div id="chatlog"></div>
+    <input type="text" id="userInput" placeholder="Type your message..." autocomplete="off" />
+    <button onclick="sendMessage()">Send</button>
+  </div>
   <script src="script.js"></script>
 </body>
 </html>
