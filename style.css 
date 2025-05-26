@@ -1,0 +1,75 @@
+/* General Page Styling */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #e9eff3;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 50px;
+}
+
+/* Wrapper */
+.chat-wrapper {
+  text-align: center;
+}
+
+/* Title */
+.chat-title {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Chat Container */
+.chat-container {
+  width: 400px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+/* Chat Log */
+.chat-log {
+  flex: 1;
+  padding: 20px;
+  height: 400px;
+  overflow-y: auto;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Messages */
+.user-msg,
+.bot-msg {
+  margin: 10px 0;
+  padding: 12px 16px;
+  border-radius: 20px;
+  max-width: 80%;
+  word-wrap: break-word;
+}
+
+.user-msg {
+  background-color: #daf1ff;
+  align-self: flex-end;
+  text-align: right;
+}
+
+.bot-msg {
+  background-color: #f1f0f0;
+  align-self: flex-start;
+  text-align: left;
+}
+
+/* Input */
+#userInput {
+  border: none;
+  padding: 15px;
+  font-size: 16px;
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
+}
