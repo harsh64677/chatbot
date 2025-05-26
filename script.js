@@ -1,23 +1,46 @@
-javascript
-async function sendMessage() {
-  const input = document.getElementById("user-input");
-  const message = input.value;
-  appendMessage("You", message);
-  input.value = "";
+let intents;
 
-  const res = await fetch("http://localhost:5000/chat", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ message })
+fetch('intents.json')
+  .then(response => response.json())
+  .then(data => {
+    intents = data.intents;
   });
 
-  const data = await res.json();
-  appendMessage("Zippy", data.reply);
+const chatlog = document.getElementById('chatlog');
+const userInput = document.getElementById('userInput');
+
+function sendMessage() {
+  const message = userInput.value.trim();
+  if (!message) return;
+  addMessage(message, 'user-msg');
+  userInput.value = '';
+  botResponse(message);
 }
 
-function appendMessage(sender, text) {
-  const chatBox = document.getElementById("chat-box");
-  const msg = document.createElement("div");
-  msg.innerHTML = `<strong>${sender}:</strong> ${text}`;
-  chatBox.appendChild(msg);
+function addMessage(message, className) {
+  const msgDiv = document.createElement('div');
+  msgDiv.className = className;
+  msgDiv.textContent = message;
+  chatlog.appendChild(msgDiv);
+  chatlog.scrollTop = chatlog.scrollHeight;
+}
+
+function botResponse(message) {
+  if (!intents) {
+    addMessage("Sorry, I can't respond right now.", 'bot-msg');
+    return;
+  }
+
+  const msgLower = message.toLowerCase();
+  for (let intent of intents) {
+    for (let pattern of intent.patterns) {
+      if (msgLower.includes(pattern.toLowerCase())) {
+        const responses = intent.responses;
+        const response = responses[Math.floor(Math.random() * responses.length)];
+        addMessage(response, 'bot-msg');
+        return;
+      }
+    }
+  }
+  addMessage("Sorry, I didn't understand that.", 'bot-msg');
 }
