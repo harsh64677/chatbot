@@ -1,0 +1,78 @@
+{
+    "intents": [
+      {
+        "tag": "greeting",
+        "patterns": [
+          "Hello", "Hi", "Good morning", "Hey there", "What's up?"
+        ],
+        "responses": [
+          "Hello! How can I assist you today?", 
+          "Hi there! Need any help?", 
+          "Greetings! What can I do for you?"
+        ]
+      },
+      {
+        "tag": "goodbye",
+        "patterns": [
+          "Bye", "Goodbye", "See you later", "Catch you later", "I have to go"
+        ],
+        "responses": [
+          "Goodbye! Have a great day!", 
+          "See you later!", 
+          "Take care and come back soon!"
+        ]
+      },
+      {
+        "tag": "thanks",
+        "patterns": [
+          "Thank you", "Thanks a lot", "Much appreciated", "Thanks for your help", "Thanks"
+        ],
+        "responses": [
+          "You're welcome!", 
+          "Happy to help!", 
+          "Anytime!"
+        ]
+      },
+      {
+        "tag": "weather",
+        "patterns": [
+          "What's the weather like?", 
+          "Is it going to rain today?", 
+          "Tell me today's weather", 
+          "Should I carry an umbrella?", 
+          "Is it sunny outside?"
+        ],
+        "responses": [
+          "I can't provide live weather, but I suggest checking a weather app for accurate updates.",
+          "I wish I could tell you, but I'm not connected to live weather data.",
+          "Check your local weather service for the most accurate forecast!"
+        ]
+      },
+      {
+        "tag": "age",
+        "patterns": [
+          "How old are you?", 
+          "What's your age?", 
+          "When were you created?"
+        ],
+        "responses": [
+          "I'm a computer program, so I don't age like humans. But I was created recently!",
+          "Age is just a number, especially for a bot!",
+          "I live in the moment – no birthdays for me!"
+        ]
+      },
+      {
+        "tag": "creator",
+        "patterns": [
+          "Who created you?", 
+          "Who built you?", 
+          "Who made this chatbot?"
+        ],
+        "responses": [
+          "I was built by a developer using Python and machine learning techniques!",
+          "Some clever minds trained me using NLTK and scikit-learn!",
+          "A curious developer gave me life through code."
+        ]
+      }
+    ]
+  }
