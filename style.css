@@ -1,12 +1,11 @@
-/* General Page Styling */
 body {
   font-family: 'Segoe UI', sans-serif;
   background: #e9eff3;
   margin: 0;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
-  padding-top: 50px;
+  align-items: center;
+  height: 100vh;
 }
 
 /* Wrapper */
@@ -16,21 +15,20 @@ body {
 
 /* Title */
 .chat-title {
-  font-size: 28px;
+  font-size: 30px;
   margin-bottom: 20px;
   color: #333;
 }
 
-/* Chat Container */
+/* Chat Box */
 .chat-container {
   width: 400px;
   background: #fff;
   border-radius: 12px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
   display: flex;
   flex-direction: column;
-  margin: 0 auto;
+  overflow: hidden;
 }
 
 /* Chat Log */
@@ -40,6 +38,8 @@ body {
   height: 400px;
   overflow-y: auto;
   border-bottom: 1px solid #ddd;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Messages */
@@ -64,12 +64,42 @@ body {
   text-align: left;
 }
 
-/* Input */
-#userInput {
-  border: none;
+/* Input Area */
+.input-area {
+  display: flex;
+  flex-direction: column;
   padding: 15px;
+  background-color: #fafafa;
+}
+
+.input-label {
+  margin-bottom: 8px;
+  font-size: 14px;
+  text-align: left;
+  color: #555;
+}
+
+#userInput {
+  padding: 12px;
   font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
   outline: none;
-  width: 100%;
-  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+/* Submit Button */
+.submit-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: #0056b3;
 }
